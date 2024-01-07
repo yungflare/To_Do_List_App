@@ -1,7 +1,6 @@
 // Converting Vanilla JS to jQuery 
-
-function newItem (){
-    // adding new item to list 
+    function newItem(){
+ // Adding new item to list 
     let li = $('<li></li>');
     let inputValue = $('#input').val();
     li.append(inputValue);
@@ -12,10 +11,10 @@ function newItem (){
         $('#list').append(li);
     }
  // crossing out an item for the list of items : 
-    function crossOut () {
+    function crossOut() {
      li.toggleClass("strike");    
     }
-    li.on("click", function crossOut() {
+    li.on("dblclick", function crossOut() {
         li.toggleClass("strike");
     });
 
@@ -24,13 +23,14 @@ function newItem (){
     crossOutButton.append(document.createTextNode('X'));
     li.append(crossOutButton);
 
-    crossOutButton.on("click", deleteListItem);
-    function deleteListItem (){
-        li.addClass("delete")
+    crossOutButton.on("click", deleteListItem); 
+   function deleteListItem() {
+     li.addClass("delete")
     }
 // Reordering the items : 
 
     $('#list').sortable();
 
-}
+
+    };
 
